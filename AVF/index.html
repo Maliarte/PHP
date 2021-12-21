@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Marília">
+
+    <title>Agrana: Emprestimos para Associados</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./Style/style.css" />
+    <script src="./JS/script.js"></script>
+    
+  </head>
+
+  <!--Execute um JavaScript imediatamente após o carregamento de uma página onload="myFunction()"-->
+  <body onload="listaEmprestimo()">
+    <ul>
+      <li><a class="active" href="index.html">Inicio</a></li>
+      <!--<li><a href="listarEmprestimos.php">Listar</a></li> -->
+      <li><a href="404.html">Listar</a></li>
+       <!-- <li><a href="listarEmprestimos.php">Listar</a></li> -->
+      <li><a href="404.html">Alterar</a></li>
+    </ul>
+    <h1>Agrana Soluções</h1>
+
+    <form action="" method="" id="cadAssoc">
+      <table style="width: 400px">
+        <tr>
+          <td colspan="2">
+            <h2>Novo Emprestimo [Incluir]</h2>
+          </td>
+        </tr>
+        <tr>
+            <td style="text-align: left">CPF</td>
+            <td><input type="text" name="cpf" id="cpfform" /></td>
+          </tr>
+        <tr>
+          <td style="text-align: left">NOME</td>
+          <td><input type="text" name="nome" id="nomeform" /></td>
+        </tr>
+        
+        <tr>
+          <td style="text-align: left">CREDITO</td>
+          <td>
+            <input type="radio" name="consignado" id="consignado" checked="true"/>
+            <label for="credConsignado">CONSIGNADO</label><br />
+            <input type="radio" name="consolidado" id="consolidado" />
+            <label for="credConsolidado">CONSOLIDADO</label><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align: left">SPC SERASA</td>
+          <td>
+            <input type="radio" name="spcform" id="spctrue" value="S" />
+            <label for="spctrue">SIM</label>
+            <input
+              type="radio"
+              name="spcform"
+              id="spcfalse"
+              value="N"
+              checked="true"
+            />
+            <label for="spcfalse">NÃO</label>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left">RENDA MENSAL(R$)</td>
+          <td>
+            <label for="currency-field"></label>
+            <input
+              type="text"
+              name="currency-field"
+              id="currency-field"
+              pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+              value=""
+              data-type="currency"
+              placeholder="R$ 1,600.00"
+            />
+          </td>
+        </tr>
+        <!--
+                como calcular a margem consignada como o limite da margem consignável é de 35% da renda líquida do contratante, 
+                é necessário utilizar como base a quantia recebida mensalmente após todos os descontos. 
+                Então, você deve multiplicar esse valor por 0,35.
+            -->
+
+        <tr>
+          <td style="text-align: left">PARCELAS</td>
+          <td>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="24"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              id="button1"
+              type="button"
+              value="Incluir"
+              onclick="ValidarForm()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

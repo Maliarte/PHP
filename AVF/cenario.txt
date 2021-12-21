@@ -1,0 +1,58 @@
+FAETERJ-Rio
+
+Desenvolvimento de Aplicações Web - 3DAW
+AVS 3DAW Noite 2021-2
+
+Aluno: Marília Silva.
+
+A cooperativa de crédito AGrana empresta dinheiro a trabalhadores de empresas associadas com
+uma taxa de juros diferenciada. 
+
+O Sr. Ricardo, presidente da cooperativa, convidou a empresa XPTOTec para desenvolver o 
+                | controle dos empréstimos em tecnologia WEB |
+
+O sistema deverá:
+
+    * controlar os valores emprestados a cada associado, bem como sua margem consignada, 
+    ou seja, o limite de endividamento do associado.
+
+A cooperativa tem um corpo de vendedores que são comissionados na venda pelo total de parcelas
+pagas no primeiro ano de contrato. 
+
+    * controlar as comissões e valores pagos aos vendedores.
+
+O funcionário associado pode financiar qualquer bem durável, para isso deverá fazer um contrato de
+financiamento dando o bem comprado em garantia do empréstimo. A pessoa financiada deverá ter o
+nome limpo na praça. O financiamento pode ser feito em até 24 meses e o limite de endividamento
+mensal será 30% do seu salário mensal. O pagamento deverá ser efetuado através de consignação
+em folha de pagamento. 
+
+    * As parcelas deverão ter seu pagamento controlado e caso alguém não pague por dois meses consecutivos, 
+    o seu registro deverá ir para o SPC.
+
+    * O cálculo das parcelas e a taxa de juros dos financiamentos deverão ser configuráveis no sistema. 
+
+    * A empresa associada receberá uma comissão do total de prestações pagas todo mês e será
+configurável no sistema.
+
+O sistema deverá ser capaz:
+    * emitir relatório de parcelas pagas, 
+    * emitir relatório de parcelas atrasadas, 
+    * emitir relatório das empresas com o maior número:
+      - de parcelas atrasadas, 
+      - valores pagos no mês, 
+      - pagamentos projetados para os próximos meses, 
+      - valor total de atraso, 
+      - total de comissões pagas no mês e acumulado por empresa.
+
+Requisitos: 
+
+O código deverá ser em PHP.
+
+1. Criar as funcionalidades de Incluir Empréstimo, alterar Empréstimo e listar Empréstimos. As
+funcionalidades no frontend devem usar requisições no javascript e receber as respostas
+com JSON.
+
+2. Os dados devem ser validados no Javascript e no php.
+
+3. Os dados devem ser armazenados no banco de dados Mysql.
