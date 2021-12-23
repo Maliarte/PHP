@@ -1,0 +1,62 @@
+Desenvolvimento de Aplicações Web - 3DAW
+AVF 3DAW Noite 2021-2
+Aluno: Marília Silva.
+
+
+
+O Sr. Water Falls, satisfeito com o último trabalho executado pela XptoTec solicitou um novo
+sistema para controlar as entregas de sua empresa de concursos públicos KeyFalls.
+
+A empresa KeyFalls organiza concursos públicos, trabalha com concursos nacionais,
+estaduais e municipais. Cada concurso deve ter suas inscrições de candidatos feitas via
+web, onde devem obter o boleto de cobrança para pagamento, ou pedir isenção da taxa de
+inscrição. O resultado do pedido de isenção estará disponível no site e o candidato receberá
+um e-mail avisando que já existe um resultado do seu pleito. Todas as comunicações são
+feitas sempre pelo site, onde 
+
+* cada candidato tem uma área exclusiva, acessada por login e senha.
+
+Os locais de prova serão estabelecidos conforme a quantidade de candidatos em cada
+cidade e região da cidade e bairro. Para cada cargo do concurso, há um conjunto de provas.
+Os candidatos a cada cargo devem estar organizados em salas que recebam o tipo de
+prova de seu cargo. Os candidatos deverão fazer a prova no lugar mais próximo de
+sua residência. 
+
+Em cada sala de prova há uma lista de candidatos para um mesmo cargo e
+um funcionário responsável pela fiscalização da prova. Todos os candidatos presentes
+devem assinar a lista de presença.
+
+A ficha com as respostas de todos os alunos serão enviadas para uma central que fará a
+captura desses dados para processamento pelo sistema. O sistema deverá calcular a nota
+de cada candidato segundo o critério de peso para cada prova. Os candidatos devem obter
+como condição mínima, 50% de acertos em cada prova e 60% no total de todas as provas.
+
+O sistema deve liberar um relatório ordenado de forma decrescente de nota, contendo o
+nome do candidato classificado, seu número de inscrição e sua nota. Este relatório deve ter
+somente os candidatos classificados. Os candidatos não classificados poderão ver a
+quantidade de erros e acertos na área restrita do site.
+
+Após a prova o site deverá liberar o gabarito das provas e no tempo devido a lista de
+classificados com sua respectiva pontuação. O site deverá prover uma funcionalidade de
+recurso contra o resultado de uma questão de prova, para anular o gabarito daquela
+questão. 
+
+Caso alguma questão seja anulada, o sistema deverá recalcular as notas dos candidatos e republicar 
+a lista de classificados. Após o julgamento de todos os recursos de todos os candidatos, será publicado o resultado final.
+O código deverá ser em PHP e as requisições devem ser feitas no javascript.
+
+
+CREAT
+
+1. Criar as funcionalidades de Listar candidatos em ordem de nome, por sala de prova,
+colocando 50 candidatos em cada sala. O candidato possui nome, cpf, identidade,
+email, cargo pretendido e sala de prova.
+
+2. Criar funcionalidade de Incluir fiscal de prova que irá trabalhar em cada sala,
+alocando dois fiscais por sala. Fiscal possui nome, cpf, sala de prova.
+
+3. Criar funcionalidade de alterar a sala de prova de um candidato.
+
+4. Os dados devem ser validados no Javascript e no php.
+
+5. Os dados devem ser armazenados no banco de dados Mysql.
