@@ -1,0 +1,22 @@
+esenvolvimento de Aplicações Web - 3DAW
+AV1 3DAW 2021-2
+
+Aluno:
+O Sr. Water Falls precisa de um sistema de jogo corporativo, para treinar seus gestores em situações difíceis. O jogo deverá gerenciar situações de perguntas e respostas (decisões) encadeadas. 
+O game é composto por vários desafios e cada desafio tem um objetivo específico, como por exemplo, gerenciar o andamento de um projeto, resolver um problema administrativo, contratar um novo funcionário, conceder um empréstimo e outros.
+Neste primeiro momento será desenvolvido somente o cadastro Usuários, Perguntas e Respostas.
+Criar as funcionalidades de Criar Usuário , alterar Usuário , listar todos Usuário , listar um Usuário   e excluir Usuário .
+O Usuário terá nome, matrícula e função.
+Inicialmente usaremos arquivos texto(txt) para salvar os usuários.
+As funcionalidades de Usuários devem estar disponíveis por tela.
+O código deverá ser em PHP.
+
+Então deverá ser criado:
+Criar Usuário
+Alterar Usuário
+Listar todos Usuários
+Listar um Usuário
+Excluir Usuário
+<<<<<<< HEAD
+
+=======

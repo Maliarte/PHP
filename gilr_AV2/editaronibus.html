@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Onibus</title>
+    <link rel="stylesheet" href="./Style/style.css">
+    <script src="./JS/editarOnibus.js"></script>
+</head>
+
+<body onload="listaOnibus()">
+    <form action="">
+        <table style="width: 400px;">
+            <tr>
+                <td colspan="2">
+                    <h1>Editar Ônibus</h1>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">ID</td>
+                <td><input type="text" name="id" id="id"  disabled = true></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">MARCA</td>
+                <td><input type="text" name="marca" id="marca" required></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">MODELO</td>
+                <td><input type="text" name="modelo" id="modelo" required></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">ASSENTOS</td>
+                <td>
+                    <input type="radio" name="assentos" id="assentos_23" value = "23">
+                    <label for="assentos_23">23 Assentos</label><br>
+                    <input type="radio" name="assentos" id="assentos_28" value = "28">
+                    <label for="assentos_28">28 Assentos</label><br>
+                    <input type="radio" name="assentos" id="assentos_32" value = "32">
+                    <label for="assentos_32">32 Assentos</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">BANHEIRO</td>
+                <td>
+                    <input type="radio" name="banheiro" id="banheiro_s" value = "S">
+                    <label for="banheiro_s">SIM</label>
+                    <input type="radio" name="banheiro" id="banheiro_n" value = "N">
+                    <label for="banheiro_n">NÃO</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">AR-CONDICIONADO</td>
+                <td>
+                    <input type="radio" name="ar_condicionado" id="ar_condicionado_s" value = "S">
+                    <label for="ar_condicionado_s">SIM</label>
+                    <input type="radio" name="ar_condicionado" id="ar_condicionado_n" value = "N">
+                    <label for="ar_condicionado_n">NÃO</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">CHASSI</td>
+                <td><input type="text" name="chassi" id="chassi" required></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">PLACA</td>
+                <td><input type="text" name="placa" id="placa" required></td>
+            </tr>
+            
+            <tr id="ultimaLinha">
+                <td colspan="2">
+                    <input type="button" 
+                    value="Enviar" 
+                    style="width: 80px; margin-right: 20px;" 
+                    onclick="validarForm()">
+                    <input type="button" value="Voltar" 
+                    style="width: 80px;" 
+                    onclick="window.location.replace('http://localhost:8000/index.html')">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        
+    </script>
+</body>
+
+</html>

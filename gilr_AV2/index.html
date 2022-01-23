@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viação Maliarte</title>
+    <link rel="stylesheet" href="./Style/style.css">
+    <script src="./JS/script.js"></script>
+</head>
+<!--Execute um JavaScript imediatamente após o carregamento de uma página onload="myFunction()"-->
+<body onload="listaOnibus()">
+    <input type="button" value="Carregar Lista" onclick="location.reload()">
+    <h1>Viação Maliarte</h1>
+    <table>
+        <tr>
+            <th>MARCA</th>
+            <th>MODELO</th>
+            <th>ASSENTOS</th>
+            <th>BANHEIRO</th>
+            <th>AR-CONDICIONADO</th>
+            <th>CHASSI</th>
+            <th>PLACA</th>
+            <th>AÇÃO</th>
+        </tr>
+        <tr id="ultimaLinha">
+            <td colspan="8"></td>
+        </tr>
+    </table>
+
+    <form action="" method="" id="cadOnibus">
+        <table style="width: 400px;">
+            <tr>
+                <td colspan="2">
+                    <h2>Novo Ônibus [Incluir]</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">MARCA</td>
+                <td><input type="text" name="marca" id="marcaform"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">MODELO</td>
+                <td><input type="text" name="modelo" id="modeloform"></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">ASSENTOS</td>
+                <td>
+                    <input type="radio" name="assentos" id="assentos_23" value = "23" checked="true">
+                    <label for="assentos_23">23 Assentos</label><br>
+                    <input type="radio" name="assentos" id="assentos_28" value = "28">
+                    <label for="assentos_28">28 Assentos</label><br>
+                    <input type="radio" name="assentos" id="assentos_32" value = "32">
+                    <label for="assentos_32">32 Assentos</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">BANHEIRO</td>
+                <td>
+                    <input type="radio" name="banheiroform" id="banheiro_s" value = "S">
+                    <label for="banheiro_s">SIM</label>
+                    <input type="radio" name="banheiroform" id="banheiro_n" value = "N"  checked="true">
+                    <label for="banheiro_n">NÃO</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">AR-CONDICIONADO</td>
+                <td>
+                    <input type="radio" name="ar_condicionadoform" id="ar_condicionado_s" value = "S">
+                    <label for="ar_condicionado_s">SIM</label>
+                    <input type="radio" name="ar_condicionadoform" id="ar_condicionado_n" value = "N"  checked="true">
+                    <label for="ar_condicionado_n">NÃO</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">CHASSI</td>
+                <td><input type="text" name="chassi" id="chassiform" required></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">PLACA</td>
+                <td><input type="text" name="placa" id="placaform" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Cadastrar" onclick="ValidarForm()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <table style="width: 400px;">
+        <tr>
+            <td><img src="viacaocalango.png" alt="" srcset="" width="100%"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
