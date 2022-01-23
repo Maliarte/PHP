@@ -1,0 +1,12 @@
+jose; jose@gmail.com; 34
+jose; jose@gmail.com; 22
+carmem; carlito@gms.coom; 34
+jose; jose@gmail.com; 22
+carmem; carlito@gms.coom; 34
+teresa; teresa@gmail.com; 33
+teresa; teresa@gmail.com; 33
+jose; jose@gmail.com; 22
+carmem; carlito@gms.coom; 34
+carmem; teresa@gmail.com; 34
+carmem; teresa@gmail.com; 34
+jose; jose@gmail.com; 22

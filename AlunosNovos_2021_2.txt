@@ -1,0 +1,4 @@
+nome; matricula; email;idade
+jose;jose@gmail.com;22
+carmem;carlito@gms.coom;
+teresa;teresa@gmail.com;33

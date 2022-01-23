@@ -1,0 +1,3 @@
+nome;email;idade
+jose;ok;22
+jose;ok;22

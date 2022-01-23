@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Aluno</title>
+    <script>
+        function buscarAlunos() {
+            let xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("Chegou resposta: " + this.responseText)
+                    document.getElementById("msg").innerHTML = this.responseText;
+                    let obj =JSON.parse(this.responseText);
+                    //obj -> array
+                    for(i=0; i < obj.lenght; i++) {
+                            let strLinha = "<tr>"+ obj[i] + "</tr>"
+                            document.getElementById("msg").innerHTML = obj[i];
+                            console.log(obj[i]);
+                    }
+                }
+            }
+            xmlHttp.open("GET", "http://localhost/3dawnoite2/ex09_ListarAluno.php");
+            xmlHttp.send();
+            console.log("Enviei requisição");
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="Listar Todos Alunos" onclick="buscarAlunos()">
+<table id="tab">
+    <tr>
+        <th>id</th>
+        <th>Nome</th>
+        <th>email</th>
+        <th>cpf</th>
+        <th>matricula</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p id="msg"></p>
+<table >
+    
+</table>
+</body>
+</html>

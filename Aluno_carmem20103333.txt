@@ -1,0 +1,3 @@
+nome;email;idade
+carmem;carlito@gms.coom;34
+carmem;carlito@gms.coom;34

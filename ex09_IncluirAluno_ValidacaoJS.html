@@ -1,0 +1,229 @@
+
+    
+<DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validando formulario com JS</title>
+  </head>
+  
+  <script>
+      
+    function NomeValido(pNome)
+    {
+        //verificando se nome esta vazio
+        if (strNome == "") {
+        return false;
+        }
+        return true;
+    }
+    //expressoes regulares
+    function emailValido(pEmail) 
+    {
+        let reg = /\S+@\S+\.\S+/;
+        return reg.test(pEmail);
+    }
+    function cpfValido(pEmail) 
+    {
+        let reg = /\S+@\S+\.\S+/;
+        return reg.test(pEmail);
+    }
+
+    function ValidarDigCPF(pCPF) {
+       let Soma = 0;
+       let Resto = 0;
+       // "12345678910";
+       for (let i=1; i<=9; i++) {
+        Soma = Soma + parseInt(pCPF.substring(i-1, i)) * (11 -i);
+       }
+       Resto = (Soma * 10) % 11;
+            if (Resto == 10) Resto = 0;
+            if (Resto != parseInt(pCPF.substring(9, 10))) return
+       false;
+       Soma = 0;
+       for (let i=1; i<=10; i++) {
+       Soma = Soma + parseInt(pCPF.substring(i-1, i)) * (12 -i);
+       }
+       Resto = (Soma * 10) % 11;
+       if (Resto == 10) Resto = 0;
+       if (Resto != parseInt(pCPF.substring(10, 11))) return
+       false;
+       return true;
+       }
+
+    function ValidarForm() {
+        /*  
+            let uma declaração de criação de variavel Php E Mysql Desenvolvimento Web
+
+        let permite que você declare variáveis limitando seu escopo no bloco, 
+        instrução, ou em uma expressão na qual ela é usada. Isso é inverso da keyword var , 
+        que define uma variável globalmente ou no escopo inteiro de uma função, 
+        independentemente do escopo de bloco.
+        */
+       let objForm = document.getElementById("cadAluno");//nao usual
+       console.log("objForm: " + objForm.innerHTML);
+       //let nome2....
+
+       let strNome = document.getElementById("nome").value;
+       let strEmail = document.getElementById("email").value;
+       let strCpf = document.getElementById("cpf").value;
+       let strMat = document.getElementById("matricula").value;
+       console.log("nome:" + strNome + " email: " + strEmail + "cpf:" + strCpf + " Mat: " + strMat); msgErro = "";
+       if (!NomeValido(strNome)) {
+       msgErro = "Nome não pode ser vazio. \n";
+       }
+       if (!emailValido(strEmail)) {
+       msgErro =+ "Email não está no padrão. \n";
+       }
+       if (!ValidarDigCPF(strCpf)) {
+       msgErro =+ "CPF não é valido. \n";
+       }
+       if (msgErro == "") {
+
+            // passagem de parametros para o php
+            EnviarForm(strNome, strEmail, strCpf, strMat);
+        }
+       }
+       function EnviarForm(pNome, pEmail, pCpf, pMat) {
+       let xmlHttp = new XMLHttpRequest();
+       xmlHttp.onreadystatechange = function() {
+
+       if (this.readyState == 4 && this.status == 200) 
+       {
+       console.log("Chegou resposta: " + this.responseText)
+       document.getElementById("msg").innerHTML =this.responseText;
+       }
+       }
+       xmlHttp.open("GET","http://localhost/3daw/ex09_IncluirAluno.php?nome=" + pNome +"&email=" + pEmail + "&cpf=" + pCpf + "&matricula=" + pMat);
+       xmlHttp.send();
+       console.log("Enviei requisição");
+       }
+ </script>
+</head>
+
+<body>
+ <a href="ex08_listarAlunos.php">Listar Aluno</a><br />
+ <a href="ex08_IncluirAluno.php">Incluir Aluno</a><br />
+
+      <p>    01.12.21
+      Validar formulario sem submeter ao SGBD, validando diretamente na pagina
+      HTML.
+      </p>
+
+      <h1 id = "msg">Inserir Aluno</h1>
+    <form action="" id="cadAluno">
+        nome: <input type="text" name="aluno" id="nome" /><br/>
+        email: <input type="text" name="email" id="email" /><br/>
+        CPF: <input type="text" name="cpf" id="cpf" /><br />
+        Matricula: <input type="text" name="matricula" id="matricula"/>
+        <br/>
+        <input type="button" value="enviar" onclick="ValidarForm()"/>
+    </form>
+    <p id="msg"></p>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Title</title>
+ <script>
+ function NomeValido(pNome){
+ if (pNome == "") {
+ return false;
+ }
+ return true;
+ }
+ function emailValido(pEmail) {
+ let reg = /\S+@\S+\.\S+/;
+ return reg.test(pEmail);
+ }
+ function CPFValido(pCpf) {
+ }
+ function ValidarDigCPF(pCPF) {
+ let Soma = 0;
+ let Resto = 0;
+ // "12345678910";
+ for (let i=1; i<=9; i++) {
+ Soma = Soma + parseInt(pCPF.substring(i-1, i)) * (11 -
+i);
+ }
+ Resto = (Soma * 10) % 11;
+ if (Resto == 10) Resto = 0;
+ if (Resto != parseInt(pCPF.substring(9, 10))) return
+false;
+ Soma = 0;
+ for (let i=1; i<=10; i++) {
+ Soma = Soma + parseInt(pCPF.substring(i-1, i)) * (12 -
+i);
+ }
+ Resto = (Soma * 10) % 11;
+ if (Resto == 10) Resto = 0;
+ if (Resto != parseInt(pCPF.substring(10, 11))) return
+false;
+ return true;
+ }
+ function ValidarForm() {
+ let objForm = document.getElementById("cadAluno");
+ console.log("objForm: " + objForm.innerHTML);
+ let strNome = document.getElementById("nome").value;
+ let strEmail = document.getElementById("email").value;
+ let strCpf = document.getElementById("cpf").value;
+ let strMat = document.getElementById("matricula").value;
+ console.log("nome:" + strNome + " email: " + strEmail + "
+cpf:" + strCpf + " Mat: " + strMat);
+ msgErro = "";
+ if (!NomeValido(strNome)) {
+ msgErro = "Nome não pode ser vazio. \n";
+ }
+ if (!emailValido(strEmail)) {
+ msgErro =+ "Email não está no padrão. \n";
+ }
+ if (!ValidarDigCPF(strCpf)) {
+ msgErro =+ "CPF não é valido. \n";
+ }
+ if (msgErro == "") {
+ EnviarForm(strNome, strEmail, strCpf, strMat);
+ }
+ }
+ function EnviarForm(pNome, pEmail, pCpf, pMat) {
+ let xmlHttp = new XMLHttpRequest();
+ xmlHttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 200) {
+ console.log("Chegou resposta: " +
+this.responseText)
+ document.getElementById("msg").innerHTML =
+this.responseText;
+ }
+ }
+ xmlHttp.open("GET",
+"http://localhost/3dawnoite2/ex09_IncluirAluno.php?nome=" + pNome +
+ "&email=" + pEmail + "&cpf=" + pCpf + "&matricula=" +
+pMat);
+ xmlHttp.send();
+ console.log("Enviei requisição");
+ }
+ </script>
+</head>
+<body>
+<a href="ex08_listarAlunos.php">Listar Aluno</a><br>
+<a href="ex08_IncluirAluno.php">Incluir Aluno</a><br>
+<h1>Inserir Aluno</h1>
+<h3 id="msg"></h3>
+<form action="" id="cadAluno" >
+ nome: <input type="text" name="aluno" id="nome"><br>
+ email: <input type="text" name="email" id="email"><br>
+ CPF: <input type="text" name="cpf" id="cpf"><br>
+ Matricula: <input type="text" name="matricula" id="matricula">
+<br>
+ <input type="button" value="enviar" onclick="ValidarForm()">
+</form>
+</body>
+</html>
+
+-->

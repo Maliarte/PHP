@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <!-- 
+    
+    Enviando requisicao ao servidor: 
+    utilizando navegador, usando link da tag A, no formulario faço no 
+    action: indicando quem ira receber a requisicao que contem o formulario
+
+    -->
+    <h1>Calculadora</h1>
+    <form action="ex05_FormCalculatorSoma.php" method="GET">
+      <h3>Soma</h3>
+      <input type="number" name="var1" /> +
+      <input type="number" name="var2" /> =
+      <input type="number" name="resultado" /><br /><br />
+      <input type="submit" value="Calcular" />
+    </form>
+    
+  </body>
+</html>
