@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exemplo de Orientação ao Objeto com JavaScript</title>
+  </head>
+
+  <body>
+    <p>     O requisito para ver funcionar é acessar o console JavaScript nativo do navegador 
+            (Barbaros Techies here <a href="https://maliarte.com.br">developer tools</a> + informação).
+    </p>
+
+  </body>
+
+    <script>
+        //criamos o primeiro objeto JS! apague o comentario na ordem decimal
+        //#1 const person = {};
+        //vamos incrementar
+        const persona = {
+        //#2 name: ['Marilia', 'Silva'],
+        name : {
+                first: 'Bob',
+                last: 'Smith'
+        },
+        age: 27,
+        gender: 'mulher',
+        interests: ['music', 'emicida'],
+        bio: function() {
+            alert(this.name[0] + ' ' + this.name[1] + ' tem ' + this.age + ' anos de idade. Ela gosta ' + this.interests[0] + ' e ' + this.interests[1] + '.');
+        },
+        greeting: function() {
+            alert('Oi Barbaro tech! Eu sou ' + this.name[0] + '.'); 
+            
+        } 
+    };
+    
+    /* 
+                         MALIARTE 
+                    (M E I D) - Explain
+                Teste de comandos com o DevTOOL
+                        
+    | person - namespace | 
+    - deve ser inserido primeiro, para acessar qualquer coisa encapsulada dentro do objeto.
+
+                        - (*)itens de dados: chamados de propriedades do objeto
+
+                                    person.name             (*)         
+                                    person.name[0]          (*) 
+                                    person.age              (*) 
+                                    person.interests[1]     (*) 
+
+
+                        - (#) funções que permitem ao objeto fazer algo com esses 
+                        dados e são chamados de métodos do objeto .
+
+                                    person.bio()            (#)         
+                                    person.greeting()       (#)
+
+    | Sub-namespaces |
+
+É ainda possível tornar o valor de um objeto membro de outro objeto. 
+Por exemplo, tente mudar o nome do membro de
+
+name: ['Bob', 'Smith'],
+
+para
+
+name : {
+  first: 'Bob',
+  last: 'Smith'
+},
+
+Aqui, estamos efetivamente criando um sub-namespace . 
+Isso parece complexo, mas na verdade não é - para acessar esses itens, você só precisa encadear a etapa extra na extremidade com outro ponto. Experimente estes no console JS:
+
+person.name.first
+person.name.last
+        */
+        
+    </script>
+</html>
